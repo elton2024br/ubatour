@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 51, 51, 51;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+  
+  /* Cores principais do GetYourGuide */
+  --primary: 220, 50, 50; /* Vermelho vibrante */
+  --primary-dark: 190, 30, 30; /* Vermelho escuro */
+  --primary-light: 255, 235, 235; /* Vermelho claro */
+  
+  --secondary: 245, 245, 245; /* Cinza muito claro */
+  --secondary-dark: 100, 100, 100; /* Cinza escuro para textos */
+  --secondary-light: 250, 250, 250; /* Quase branco */
+  
+  --accent: 255, 200, 0; /* Amarelo */
+  --accent-dark: 230, 180, 0;
+  --accent-light: 255, 245, 200;
+  
+  --success: 0, 200, 83;
+  --error: 255, 45, 85;
+  --warning: 255, 171, 15;
+  --info: 0, 122, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 max-w-7xl;
+  }
+  
+  .btn-primary {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border border-red-600 text-red-600 hover:bg-red-50 font-medium py-2 px-4 rounded transition-colors;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow hover:shadow-lg;
+  }
+  
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  
+  .badge-primary {
+    @apply bg-red-100 text-red-800;
+  }
+  
+  .badge-secondary {
+    @apply bg-gray-100 text-gray-800;
+  }
+  
+  .badge-accent {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .badge-success {
+    @apply bg-green-100 text-green-800;
+  }
+}
+
+/* Classe container adicionada manualmente */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Botões personalizados */
+.btn-primary {
+  background-color: rgb(var(--primary));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: rgb(var(--primary-dark));
+}
+
+.btn-secondary {
+  background-color: rgb(var(--secondary));
+  color: rgb(var(--secondary-dark));
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: rgb(var(--secondary-light));
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid rgb(var(--primary));
+  color: rgb(var(--primary));
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: rgba(var(--primary), 0.1);
+}
+
+/* Componentes comuns */
+.card {
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.badge {
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.badge-primary {
+  background-color: rgb(var(--primary-light));
+  color: rgb(var(--primary));
+}
+
+.badge-secondary {
+  background-color: rgb(var(--secondary));
+  color: rgb(var(--secondary-dark));
+}
+
+.badge-accent {
+  background-color: rgb(var(--accent-light));
+  color: rgb(var(--accent-dark));
+}
+
+.badge-success {
+  background-color: rgba(var(--success), 0.1);
+  color: rgb(var(--success));
+}
