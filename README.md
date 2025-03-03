@@ -37,7 +37,7 @@ A plataforma foi desenvolvida para turistas nacionais e estrangeiros interessado
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/ubatour.git
+git clone https://github.com/elton2024br/ubatour.git
 cd ubatour
 ```
 
@@ -77,7 +77,7 @@ ubatour/
 ├── public/                 # Arquivos estáticos
 │   └── images/             # Imagens do site
 ├── package.json            # Dependências e scripts
-└── README.md               # Documentação do projeto
+└── README.md              # Documentação do projeto
 ```
 
 ## 🌐 Implantação
